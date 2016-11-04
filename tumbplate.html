@@ -67,6 +67,9 @@
             <li class="menu-item"><a href="{URL}" title="{Label}">{Label}</a></li>
             {/block:Pages}
             {/block:HasPages}
+            {block:AskEnabled}
+            <li class="menu-item"><a href="/ask" title="{AskLabel}">{AskLabel}</a></li>
+            {/block:AskEnabled}
           </ul>
         </nav>
       </header>
@@ -84,28 +87,30 @@
           </article>
           {/block:Posts}
         </main>
+        {block:IndexPage}
         {block:Pagination}
         <nav class="" aria-label="Page navigation">
           <ul class="pagination">
             {block:PreviousPage}
             <li class="page-item">
-              <a class="page-link" href="{PreviousPage}" aria-label="Newer">
+              <a class="page-link" href="{PreviousPage}" aria-label="{lang:Newer posts}">
                 <span aria-hidden="true">&larr;</span>
-                <span class="sr-only">Newer</span>
+                <span class="sr-only">{lang:Newer posts}</span>
               </a>
             </li>
             {block:PreviousPage}
             {block:NextPage}
             <li class="page-item">
-              <a class="page-link" href="{NextPage}" aria-label="Older">
+              <a class="page-link" href="{NextPage}" aria-label="{lang:Older posts}">
                 <span aria-hidden="true">&rarr;</span>
-                <span class="sr-only">Older</span>
+                <span class="sr-only">{lang:Older posts}</span>
               </a>
             </li>
             {/block:NextPage}
           </ul>
         </nav>
         {/block:Pagination}
+        {/block:IndexPage}
         <aside class="sidebar">
         </aside>
       </div>
