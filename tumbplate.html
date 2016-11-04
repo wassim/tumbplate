@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{block:PostTitle}{PostTitle} - {/block:PostTitle}{block:PostSummary}{PostSummary} - {/block:PostSummary}{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{Title}</title>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//googleapis.com">
+    <link rel="dns-prefetch" href="//cloudflare.com">
+    <link rel="dns-prefetch" href="//google-analytics.com">
+
+    <title>{block:IndexPage}{block:Description}{MetaDescription} - {block:Description}{/block:IndexPage}{block:PermalinkPage}{block:PostTitle}{PostTitle} - {/block:PostTitle}{block:PostSummary}{PostSummary} - {/block:PostSummary}{/block:PermalinkPage}{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{Title}</title>
 
     {block:Description}
     <meta name="description" content="{MetaDescription}">
@@ -24,6 +29,8 @@
     {block:IfGoogleWebFontName}
     <link href="http://fonts.googleapis.com/css?family={text:Google Web Font Name}:{text:Google Web Font Weights}" rel="stylesheet" type="text/css">
     {/block:IfGoogleWebFontName}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
 
     <link rel="stylesheet" href="">
 
