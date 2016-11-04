@@ -76,7 +76,7 @@
       <div class="content" role="document">
         <main id="main" class="main">
           {block:Posts}
-          <article class="post">
+          <article class="post post-{PostID} {PostType}-post">
             <header class="entry-header">
               <h1 class="entry-title"></h1>
             </header>
@@ -87,6 +87,30 @@
           </article>
           {/block:Posts}
         </main>
+        {block:PermalinkPage}
+        {block:PermalinkPagination}
+        <nav class="" aria-label="Post navigation">
+          <ul class="pagination">
+            {block:PreviousPost}
+            <li class="post-item">
+              <a class="post-link" href="{PreviousPost}" aria-label="{lang:Prev post}">
+                <span aria-hidden="true">&larr;</span>
+                <span class="sr-only">{lang:Prev post}</span>
+              </a>
+            </li>
+            {block:PreviousPost}
+            {block:NextPost}
+            <li class="post-item">
+              <a class="post-link" href="{NextPost}" aria-label="{lang:Next post}">
+                <span aria-hidden="true">&rarr;</span>
+                <span class="sr-only">{lang:Next post}</span>
+              </a>
+            </li>
+            {/block:NextPost}
+          </ul>
+        </nav>
+        {/block:PermalinkPagination}
+        {/block:PermalinkPage}
         {block:IndexPage}
         {block:Pagination}
         <nav class="" aria-label="Page navigation">
