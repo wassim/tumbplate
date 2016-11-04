@@ -16,10 +16,20 @@
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
     {block:Hidden}
+    <meta name="text:Google Web Font Name" content="" />
+    <meta name="text:Google Web Font Weights" content="" />
     <meta name="text:Google Analytics ID" content="" />
     {/block:Hidden}
 
+    {block:IfGoogleWebFontName}
+    <link href="http://fonts.googleapis.com/css?family={text:Google Web Font Name}:{text:Google Web Font Weights}" rel="stylesheet" type="text/css">
+    {/block:IfGoogleWebFontName}
+
     <link rel="stylesheet" href="">
+
+    <style type="text/css">
+      {CustomCSS}
+    </style>
   </head>
   <body>
     <div class="container">
