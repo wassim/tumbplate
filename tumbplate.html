@@ -93,7 +93,9 @@
             {block:Title}
             <header class="entry-header">
               {block:IndexPage}
-              <h2 class="entry-title">{Title}</h1>
+              <h2 class="entry-title">
+                <a href="{Permalink}" title="{lang:Permalink}">{Title}</a>
+              </h2>
               {/block:IndexPage}
               {block:PermalinkPage}
               <h1 class="entry-title">{Title}</h1>
