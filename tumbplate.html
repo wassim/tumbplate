@@ -21,6 +21,7 @@
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
     {block:Hidden}
+    <meta name="if:Show Sidebar" content="1">
     <meta name="text:Google Web Font Name" content="" />
     <meta name="text:Google Web Font Weights" content="" />
     <meta name="text:Google Analytics ID" content="" />
@@ -88,11 +89,23 @@
         <main id="main" class="main">
           {block:Posts}
           <article class="post post-{PostID} {PostType}-post">
+            {block:Text}
+            {block:Title}
             <header class="entry-header">
-              <h1 class="entry-title"></h1>
+              {block:IndexPage}
+              <h2 class="entry-title">{Title}</h1>
+              {/block:IndexPage}
+              {block:PermalinkPage}
+              <h1 class="entry-title">{Title}</h1>
+              {/block:PermalinkPage}
             </header>
-            <div class="entry-summary">
+            {/block:Title}
+            {block:Body}
+            <div class="entry-content">
+              {Body}
             </div>
+            {/block:Body}
+            {/block:Text}
             <footer class="entry-footer">
             </footer>
           </article>
@@ -146,8 +159,10 @@
         </nav>
         {/block:Pagination}
         {/block:IndexPage}
+        {block:IfShowSidebar}
         <aside class="sidebar">
         </aside>
+        {/block:IfShowSidebar}
       </div>
       <footer id="colophon" class="content-info">
         <p class="copyright">&copy; {CopyrightYears} {Title}</p>
