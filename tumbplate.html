@@ -89,7 +89,7 @@
         </main>
         {block:PermalinkPage}
         {block:PermalinkPagination}
-        <nav class="" aria-label="Post navigation">
+        <nav class="post-pagination">
           <ul class="pagination">
             {block:PreviousPost}
             <li class="post-item">
@@ -113,7 +113,7 @@
         {/block:PermalinkPage}
         {block:IndexPage}
         {block:Pagination}
-        <nav class="" aria-label="Page navigation">
+        <nav class="home-pagination">
           <ul class="pagination">
             {block:PreviousPage}
             <li class="page-item">
@@ -139,6 +139,8 @@
         </aside>
       </div>
       <footer id="colophon" class="content-info">
+        <p class="copyright">&copy; {CopyrightYears} {Title}</p>
+        <p class="credit">Built with <a href="" title="Tumbplate">Tumbplate</a></p>
       </footer>
     </div>
 
