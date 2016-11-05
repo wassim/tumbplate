@@ -70,8 +70,19 @@
             {block:AskEnabled}
             <li class="menu-item"><a href="/ask" title="{AskLabel}">{AskLabel}</a></li>
             {/block:AskEnabled}
+            {block:SubmissionsEnabled}
+            <li class="menu-item"><a href="/submit" title="{SubmitLabel}">{SubmitLabel}</a></li>
+            {/block:SubmissionsEnabled}
+            <li class="menu-item"><a href="/archive" title="{lang:Archive}">{lang:Archive}</a></li>
           </ul>
         </nav>
+        <form action="/search" method="get" class="search-form" role="search">
+          <label>
+            <span class="sr-only">{lang:Search}:</span>
+            <input type="text" class="search-field" name="q" placeholder="{lang:Search} &hellip;" value="{SearchQuery}">
+          </label>
+          <input type="submit" class="search-submit" value="{lang:Search}">
+        </form>
       </header>
       <div class="content" role="document">
         <main id="main" class="main">
