@@ -28,7 +28,7 @@
     {/block:Hidden}
 
     {block:IfGoogleWebFontName}
-    <link href="https://fonts.googleapis.com/css?family={text:Google Web Font Name}:{text:Google Web Font Weights}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family={text:Google Web Font Name}{block:IfGoogleWebFontWeights}:{text:Google Web Font Weights}{/block:IfGoogleWebFontWeights}" rel="stylesheet" type="text/css">
     {/block:IfGoogleWebFontName}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
@@ -202,7 +202,7 @@
             {block:Audio}
             <div class="entry-content">
               {block:AlbumArt}
-              <img src="{AlbumArtURL}"{block:Caption} alt="{Caption}"{/block:Caption} >
+              <img src="{AlbumArtURL}" alt="">
               {/block:AlbumArt}
               {block:AudioEmbed}
               {AudioEmbed}
@@ -225,13 +225,13 @@
             {block:Answer}
             <div class="entry-content">
               <div class="question">
-                <img class="asker-avatar" src="{AskerPortraitURL-24}" alt="{Asker}">
+                <img class="asker-avatar" src="{AskerPortraitURL-24}" alt="">
                 <span class="asker">{Asker}</span>
                 <p class="asker-question">{Question}</p>
               </div>
               {block:Answerer}
               <div class="answer">
-                <img class="answerer-avatar" src="{AnswererPortraitURL-24}" alt="{Answerer}">
+                <img class="answerer-avatar" src="{AnswererPortraitURL-24}" alt="">
                 <span class="answerer">{Answerer}</span>
                 <p class="answerer-answer">{Answer}</p>
               </div>
@@ -242,6 +242,26 @@
             </div>
             {/block:Answer}
             <footer class="entry-footer">
+              <ul class="entry-meta">
+                {block:Date}
+                <li class="entry-date">{lang:Posted on DayOfMonth Month Year}</li>
+                {/block:Date}
+                {block:Author}
+                <li class="entry-author">{lang:Posted by PostAuthorName}</li>
+                {/block:Author}
+                {block:HasTags}
+                <ul class="entry-tags">
+                  {lang:Tagged}
+                  {block:Tags}
+                  <li class="entry-tag"><a href="{TagURL}" title="{Tag}">{Tag}</a></li>
+                  {/block:Tags}
+                </ul>
+                {/block:HasTags}
+              </ul>
+              <ul class="entry-interaction">
+                <li class="like-button">{LikeButton}</li>
+                <li class="reblog-button">{ReblogButton}</li>
+              </ul>
             </footer>
           </article>
           {/block:Posts}
