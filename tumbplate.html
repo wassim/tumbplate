@@ -137,13 +137,110 @@
             </div>
             {/block:Panorama}
             {block:Photoset}
-            <figure class="photoset{block:Caption} with-caption{/block:Caption}">
-              {Photoset}
-              {block:Caption}
-              <figcaption class="caption">{Caption}</figcaption>
-              {/block:Caption}
-            </figure>
+            <div class="entry-content">
+              <figure class="photoset{block:Caption} with-caption{/block:Caption}">
+                {Photoset}
+                {block:Caption}
+                <figcaption class="caption">{Caption}</figcaption>
+                {/block:Caption}
+              </figure>
+            </div>
             {/block:Photoset}
+            {block:Quote}
+            <div class="entry-content">
+              <blockquote class="{Length}">
+                {Quote}
+                {block:Source}
+                <footer>
+                  <cite>{Source}</cite>
+                </footer>
+                {/block:Source}
+              </blockquote>
+            </div>
+            {/block:Quote}
+            {block:Link}
+            <div class="entry-content">
+              <figure class="link{block:Description} with-caption{/block:Description}">
+                <a class="link" href="{URL}" title="{Name}" {Target}>
+                  {block:Thumbnail}
+                  <img src="{Thumbnail-HighRes}" alt="{Name}" />
+                  {/block:Thumbnail}
+                  {Name}
+                </a>
+                {block:Description}
+                <figcaption class="caption">{Description}</figcaption>
+                {/block:Description}
+              </figure>
+            </div>
+            {/block:Link}
+            {block:Chat}
+            {block:Title}
+            <header class="entry-header">
+              {block:IndexPage}
+              <h2 class="entry-title">
+                <a href="{Permalink}" title="{lang:Permalink}">{Title}</a>
+              </h2>
+              {/block:IndexPage}
+              {block:PermalinkPage}
+              <h1 class="entry-title">{Title}</h1>
+              {/block:PermalinkPage}
+            </header>
+            {/block:Title}
+            <div class="entry-content">
+              <ul class="chat">
+                {block:Lines}
+                <li class="{Alt} user_{UserNumber}">
+                {block:Label}
+                <span class="person">{Label}</span>
+                {/block:Label}
+                {Line}
+                </li>
+                {/block:Lines}
+              </ul>
+            </div>
+            {/block:Chat}
+            {block:Audio}
+            <div class="entry-content">
+              {block:AlbumArt}
+              <img src="{AlbumArtURL}"{block:Caption} alt="{Caption}"{/block:Caption} >
+              {/block:AlbumArt}
+              {block:AudioEmbed}
+              {AudioEmbed}
+              {/block:AudioEmbed}
+              {block:Caption}
+              <div class="caption">{Caption}</div>
+              {/block:Caption}
+            </div>
+            {/block:Audio}
+            {block:Video}
+            <div class="entry-content">
+              <figure class="video{block:Caption} with-caption{/block:Caption}">
+                {Video-700}
+                {block:Caption}
+                <figcaption class="caption">{Caption}<figcaption>
+                {/block:Caption}
+              </figure>
+            </div>
+            {/block:Video}
+            {block:Answer}
+            <div class="entry-content">
+              <div class="question">
+                <img class="asker-avatar" src="{AskerPortraitURL-24}" alt="{Asker}">
+                <span class="asker">{Asker}</span>
+                <p class="asker-question">{Question}</p>
+              </div>
+              {block:Answerer}
+              <div class="answer">
+                <img class="answerer-avatar" src="{AnswererPortraitURL-24}" alt="{Answerer}">
+                <span class="answerer">{Answerer}</span>
+                <p class="answerer-answer">{Answer}</p>
+              </div>
+              {/block:Answerer}
+              <div class="replies">
+                {Replies}
+              </div>
+            </div>
+            {/block:Answer}
             <footer class="entry-footer">
             </footer>
           </article>
