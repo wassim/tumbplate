@@ -43,7 +43,7 @@
       {CustomCSS}
     </style>
   </head>
-  <body class="{block:IndexPage}home{/block:IndexPage}{block:PermalinkPage}single{/block:PermalinkPage}{block:SearchPage}search{/block:SearchPage}">
+  <body class="{block:IndexPage}home{/block:IndexPage}{block:PermalinkPage}single{/block:PermalinkPage}{block:SearchPage}search{/block:SearchPage}{block:TagPage}tag-single{/block:TagPage}">
     <div class="container">
       <header id="masthead" class="banner">
         <div class="site-branding">
@@ -99,6 +99,11 @@
           <div class="alert">{lang:Sorry no search results found}</div>
           {/block:NoSearchResults}
           {/block:SearchPage}
+          {block:TagPage}
+          <div class="page-title">
+            <h3>{lang:Posts tagged Tag}</h3>
+          </div>
+          {/block:TagPage}
           {block:Posts}
           <article class="post post-{PostID} {PostType}-post">
             {block:Text}
@@ -254,9 +259,9 @@
                 {block:Date}
                 <li class="entry-date">{lang:Posted on DayOfMonth Month Year}</li>
                 {/block:Date}
-                {block:Author}
-                <li class="entry-author">{lang:Posted by PostAuthorName}</li>
-                {/block:Author}
+                {block:NoteCount}
+                <li class="entry-notes-count">{NoteCount}</li>
+                {/block:NoteCount}
                 {block:HasTags}
                 <ul class="entry-tags">
                   {lang:Tagged}
