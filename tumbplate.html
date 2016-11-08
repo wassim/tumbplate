@@ -39,6 +39,7 @@
     <!-- Normalize.css | CDNJS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
 
+    <!-- Default Stylesheet -->
     <link rel="stylesheet" href="">
 
     <!-- Custom CSS -->
@@ -55,20 +56,24 @@
         <div class="site-branding">
           {block:ShowTitle}
           {block:IndexPage}
+          <!-- Begin .site-title -->
           <h1 class="site-title">
             <a href="{BlogURL}" title="{Title}">{Title}</a>
-          </h1>
+          </h1><!-- End .site-title -->
           {/block:IndexPage}
           {block:PermalinkPage}
+          <!-- Begin .site-title -->
           <h2 class="site-title">
             <a href="{BlogURL}" title="{Title}">{Title}</a>
-          </h2>
+          </h2><!-- End .site-title -->
           {/block:PermalinkPage}
           {/block:ShowTitle}
 
           {block:ShowDescription}
           {block:Description}
+          <!-- Begin .site-description -->
           <p class="site-description">{Description}</p>
+          <!-- End .site-description -->
           {/block:Description}
           {/block:ShowDescription}
         </div><!-- End .site-branding -->
@@ -137,7 +142,6 @@
               {/block:PermalinkPage}
             </header>
             {/block:Title}
-
             {block:Body}
             <div class="entry-content">
               {Body}
