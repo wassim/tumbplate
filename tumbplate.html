@@ -91,6 +91,14 @@
       </header>
       <div class="content" role="document">
         <main id="main" class="main">
+          {block:SearchPage}
+          <div class="page-title">
+            <h3>{lang:Search results for SearchQuery}</h3>
+          </div>
+          {block:NoSearchResults}
+          <div class="alert">{lang:Sorry no search results found}</div>
+          {/block:NoSearchResults}
+          {/block:SearchPage}
           {block:Posts}
           <article class="post post-{PostID} {PostType}-post">
             {block:Text}
@@ -263,6 +271,14 @@
                 <li class="reblog-button">{ReblogButton}</li>
               </ul>
             </footer>
+            {block:PostNotes}
+            <section class="entry-notes">
+              <h3 class="notes-title">{NoteCountWithLabel}</h3>
+              <div class="notes">
+                {PostNotes}
+              </div>
+            </section>
+            {/block:PostNotes}
           </article>
           {/block:Posts}
         </main>
