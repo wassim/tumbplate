@@ -234,7 +234,6 @@
               {/block:PermalinkPage}
             </header>
             {/block:Title}
-
             <div class="entry-content">
               <ul class="chat">
                 {block:Lines}
@@ -299,6 +298,7 @@
 
             <!-- Begin .entry-footer -->
             <footer class="entry-footer">
+              <!-- Begin .entry-meta -->
               <ul class="entry-meta">
                 {block:Date}
                 <li class="entry-date">{lang:Posted on DayOfMonth Month Year}</li>
@@ -314,12 +314,13 @@
                   {/block:Tags}
                 </ul>
                 {/block:HasTags}
-              </ul>
+              </ul><!-- End .entry-meta -->
 
+              <!-- Begin .entry-interaction -->
               <ul class="entry-interaction">
                 <li class="like-button">{LikeButton}</li>
                 <li class="reblog-button">{ReblogButton}</li>
-              </ul>
+              </ul><!-- End .entry-interaction -->
             </footer><!-- End .entry-footer -->
 
             {block:PostNotes}
@@ -348,7 +349,6 @@
               </a>
             </li>
             {block:PreviousPost}
-
             {block:NextPost}
             <li class="post-item">
               <a class="post-link" href="{NextPost}" aria-label="{lang:Next post}">
@@ -375,7 +375,6 @@
               </a>
             </li>
             {block:PreviousPage}
-
             {block:NextPage}
             <li class="page-item">
               <a class="page-link" href="{NextPage}" aria-label="{lang:Older posts}">
